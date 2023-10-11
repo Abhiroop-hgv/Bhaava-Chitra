@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    /* Custom styles */
+    body {
+      background-image: url("emotion.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      backdrop-filter: blur(5px);
+    }
+    .container {
+      margin-top: 100px;
+    }
+    .login-container {
+      background-color: #ffffff;
+      padding: 10px;
+      margin-top: 100px; /* Adjust the top margin as needed */
+      margin-bottom: 100px; /* Adjust the bottom margin as needed */
+      margin-left: 0px; /* Adjust the left margin as needed */
+      margin-right: 20px; /* Adjust the right margin as needed */
+      width: 300px;
+      height: 400px;
+    }
+    .description-container {
+      background-color: transparent;
+      color: #021f3c;
+      padding: 100px 30px 180px 30px; 
+      font-weight: bolder;
+      margin-top: 130px;
+      text-align: right; /* Align the description to the right */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <!-- Login Form -->
+        <div class="login-container">
+          <h1>Login</h1>
+          <form action="/login" method="POST">
+            <div class="mb-3">
+              <label for="username" class="form-label">Username:</label>
+              <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password:</label>
+              <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            <div>
+              <input type="submit" value="Login" class="btn btn-primary">
+            </div>
+          </form>
+          <p>Not registered yet? <a href="/register">Register</a></p>
+        </div>
+      </div>
+      <div class="col-md-6 description-container">
+        <!-- Website Description -->
+        <h2>Bhaava Chitra</h2>
+        <p>Welcome to our Emotion Recognition Tool! Upload your image and discover the emotions it conveys. Our advanced
+          algorithms analyze the facial expressions captured in the image to determine the underlying emotions such as
+          happiness, sadness, anger, surprise, and more. Gain insights into the emotional content of your images and
+          explore the fascinating world of facial emotion recognition. Try it now and uncover the emotions hidden within
+          your pictures!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Bootstrap JS (optional, for certain components) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

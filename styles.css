@@ -1,0 +1,18 @@
+/* Custom styles */
+body {
+    background-color: #f8f9fa;
+  }
+  .container {
+    margin-top: 100px;
+  }
+  .login-container {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    padding: 30px;
+  }
+  .description-container {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #f0f0f0;
+    padding: 30px;
+  }
+  

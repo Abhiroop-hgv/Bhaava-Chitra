@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    /* Custom styles */
+    body {
+      background-color:#fdf4fa;
+    }
+    .container {
+      margin-top: 100px;
+    }
+    .register-container {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      background-color: #ffffff;
+      padding: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <!-- Register Form -->
+        <div class="register-container">
+          <h1>Register</h1>
+          <form action="/register" method="POST">
+            <div class="mb-3">
+              <label for="username" class="form-label">Username:</label>
+              <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password:</label>
+              <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            <div>
+              <input type="submit" value="Register" class="btn btn-primary">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Bootstrap JS (optional, for certain components)
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

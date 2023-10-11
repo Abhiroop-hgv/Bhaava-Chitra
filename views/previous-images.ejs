@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Previous Uploaded Images</title>
+</head>
+<body>
+  <h1>Previous Uploaded Images</h1>
+  <ul>
+    <% images.forEach(function(image) { %>
+      <li><img src="<%= image %>"></li>
+    <% }) %>
+  </ul>
+</body>
+</html>

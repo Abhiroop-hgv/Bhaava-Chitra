@@ -1,0 +1,169 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Upload Image</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      
+      background-image: url("select.jpg");
+      background-repeat: no-repeat;
+      background-size: 1290px 600px; /* Adjust the dimensions as needed */
+      background-position: center;
+      backdrop-filter: blur(5px);
+    }
+    
+    .upload-window {
+      width: 400px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .upload-window h1 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    
+    .upload-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .upload-form label {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    
+    .upload-form input[type="file"] {
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: #f1f1f1;
+    }
+    
+    .upload-form input[type="submit"] {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #0d90e1;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    .result {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .previous-images {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .previous-images button {
+      padding: 10px 20px;
+      background-color: #0d90e1;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="upload-window">
+    <h1>Upload Image</h1>
+    <form class="upload-form" action="/" method="POST" enctype="multipart/form-data">
+      <label for="image">Choose an image:</label>
+      <input type="file" id="image" name="image" accept="image/*" required>
+      <input type="submit" value="Upload">
+    </form>
+    <div id="pixelValues" class="result"></div>
+    <div class="previous-images">
+      <button id="previousImagesBtn">View Previous Images</button>
+      <h1>iuhevriuhevfivf</h1>
+    </div>
+  </div>
+
+  <script>
+    const form = document.querySelector('form');
+    const pixelValuesDiv = document.getElementById('pixelValues');
+    const previousImagesBtn = document.getElementById('previousImagesBtn');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch('/', {
+        method: 'POST',
+        body: formData
+      })
+        .then(response => response.text()) // Parse response as text
+        .then(emotion => {
+          pixelValuesDiv.textContent = `Emotion: ${mapEmotion(emotion)}`;
+        })
+        .catch(error => {
+          console.error(error);
+          pixelValuesDiv.textContent = 'Error uploading image.';
+        });
+    });
+
+    previousImagesBtn.addEventListener('click', () => {
+      fetch('/previous-images')
+        .then(response => response.json())
+        .then(images => {
+          if (images.length === 0) {
+            pixelValuesDiv.textContent = 'No previous images found.';
+          } else {
+            pixelValuesDiv.textContent = 'Previously Uploaded Images:';
+            const imageList = document.createElement('ul');
+            images.forEach(image => {
+              const listItem = document.createElement('li');
+              listItem.textContent = image;
+              imageList.appendChild(listItem);
+            });
+            pixelValuesDiv.appendChild(imageList);
+          }
+        })
+        .catch(error => {
+          console.error(error);
+          pixelValuesDiv.textContent = 'Error retrieving previous images.';
+        });
+    });
+
+    // Map the integer emotion to corresponding labels
+    function mapEmotion(emotion) {
+      switch (emotion) {
+        case '0':
+          return 'Angry';
+        case '1':
+          return 'Disgust';
+        case '2':
+          return 'Fear';
+        case '3':
+          return 'Happy';
+        case '4':
+          return 'Sad';
+        case '5':
+          return 'Surprise';
+        case '6':
+          return 'Neutral';
+        default:
+          return 'Unknown';
+      }
+    }
+  </script>
+</body>
+</html> -->
